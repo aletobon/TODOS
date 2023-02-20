@@ -1,0 +1,22 @@
+body {
+    display: flex;
+    flex-flow: column nowrap;
+    align-items:center ;
+    width: 100%;
+    height: 100%;
+    background: #222;
+    color: #ddd;
+}
+
+#agregar-nota {
+    display: flex;
+    flex-flow: column nowrap;
+    align-items: center;
+
+    padding: 2rem;
+    border-radius: 5px;
+
+    background: #ddd;
+    color: #222;
+    
+}
