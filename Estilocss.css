@@ -9,7 +9,9 @@ body {
     display: flex;
     flex-flow: column nowrap;
     align-items:center ;
-    background: #222;
+
+    background: url("img/lamoto.jpg") no-repeat fixed #222;
+    background-size: cover;
     color: #ddd;
 }
 
@@ -18,10 +20,10 @@ body {
     flex-flow: column nowrap;
     align-items: center;
 
+    margin: 2rem;
     padding: 2rem;
     border-radius: 5px;
 
     background: #ddd;
-    color: #222;
-    
+    color: #222;   
 }
