@@ -15,6 +15,11 @@ let notas = [];
 const formulario = document.querySelector("#agregar-nota");
 const btnAgregarNota = document.querySelector("#btn-agregar-nota");
 
+function limpiarFormulario() {
+    formulario.titulo.value = "";
+    formulario.descripcion.value = "";
+}
+
 function btnClick(e) {
     e.preventDefault();
     const titulo = formulario.titulo.value;
@@ -22,6 +27,7 @@ function btnClick(e) {
     const nota = new Nota(titulo, descripcion);
     notas.push(nota);
     console.log(notas);
+    limpiarFormulario();
     alert("Nota guardada");
 }
 
