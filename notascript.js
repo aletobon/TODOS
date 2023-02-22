@@ -1,7 +1,7 @@
 class Nota {
     constructor(titulo, descripcion) {
-        this.titulo = titulo
-        this.descripcion = descripcion
+        this.titulo = titulo;
+        this.descripcion = descripcion;
     }
 
     get descripcionDePrueba() {
@@ -15,8 +15,8 @@ const btnAgregarNota = document.querySelector("#btn-agregar-nota");
 
 function btnClick(e) {
     e.preventDefault();
-    const titulo = formulario.titulo.value
-    const descripcion = formulario.descripcion.value
+    const titulo = formulario.titulo.value;
+    const descripcion = formulario.descripcion.value;
 
     const nota = new Nota(titulo, descripcion);
     console.log(e, nota);
