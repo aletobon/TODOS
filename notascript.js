@@ -10,6 +10,8 @@ Descripción: ${this.descripcion}`;
     }
 }
 
+let notas = [];
+
 const formulario = document.querySelector("#agregar-nota");
 const btnAgregarNota = document.querySelector("#btn-agregar-nota");
 
@@ -17,10 +19,10 @@ function btnClick(e) {
     e.preventDefault();
     const titulo = formulario.titulo.value;
     const descripcion = formulario.descripcion.value;
-
     const nota = new Nota(titulo, descripcion);
-    console.log(e, nota);
-    alert(nota.descripcionDePrueba);
+    notas.push(nota);
+    console.log(notas);
+    alert("Nota guardada");
 }
 
 btnAgregarNota.addEventListener("click", btnClick);
