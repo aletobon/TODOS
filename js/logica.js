@@ -1,16 +1,5 @@
-class Nota {
-    constructor(titulo, descripcion) {
-        this.titulo = titulo;
-        this.descripcion = descripcion;
-    }
-
-    get descripcionDePrueba() {
-        return `Titulo: ${this.titulo}
-Descripción: ${this.descripcion}`;
-    }
-}
-
 const claveListaNotas = "notas";
+
 function guardarListaNotas(notas) {
     const valorNotas = JSON.stringify(notas);
     localStorage.setItem(claveListaNotas, valorNotas);
@@ -32,4 +21,3 @@ function guardarNota(nota) {
     guardarListaNotas(notas);
     console.log(notas);
 }
-
