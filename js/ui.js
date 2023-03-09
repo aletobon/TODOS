@@ -1,5 +1,14 @@
 const formulario = document.querySelector("#agregar-nota");
 const btnAgregarNota = document.querySelector("#btn-agregar-nota");
+const contenedorNotas = document.querySelector("#lista-notas");
+
+function actualizarListaNotas() {
+    let resultado = "";
+    for ( let nota of notas ) { // a cada nota del arreglo notas
+        resultado = resultado + nota.obtenerHTML(); // debes agregar a contenerdorNotas 
+    }
+    contenedorNotas.innerHTML = resultado;
+}
 
 function limpiarFormulario() {
     formulario.titulo.value = "";
@@ -13,7 +22,10 @@ function btnClick(e) {
     const nota = new Nota(titulo, descripcion);
     guardarNota(nota);
     limpiarFormulario();
+    actualizarListaNotas();
     alert("Nota guardada");
 }
 
 btnAgregarNota.addEventListener("click", btnClick);
+actualizarListaNotas();
+
