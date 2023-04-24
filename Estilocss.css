@@ -139,3 +139,82 @@ body {
 .segmento:hover {
     flex: 10;
 }
+
+.modal {
+    visibility:hidden;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 100;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: rgba(40, 40, 40, 0.4);
+    backdrop-filter: blur(2px);
+}
+
+.modal.open {
+    visibility: visible;    
+}
+
+.modal-dialog {
+    position: relative;
+    max-width: 800px;
+    max-height: 80vh;
+    border-radius: 5px;
+    overflow: auto;
+    background: rgba(255, 255, 255, 0.4);
+    cursor: default;
+    color: black;
+  }
+
+.modal-header {
+    display: flex;
+    justify-content: end;
+
+}
+
+.modal-header h1 {
+    display: flex;
+    flex-grow: 1;
+    justify-content: center;
+}
+
+.modal-footer {
+    display: flex;
+    justify-content: center;
+    padding: 20px;
+
+}
+
+.btn-estilo {
+    padding: 10px;
+    font: 30px;
+    background: #444;
+    color: black;
+    border-radius: 5px;
+}
+
+#btn-nota {
+    display: flex;
+    justify-content: center;
+    width: 40vw;
+    margin: 10px;
+    padding: 10px;
+    border-radius: 30px;
+    color: white;
+    background: rgba(4, 4, 4, 0.4);
+    font-size: 30px;
+
+}
+
+#btn-cerrar-modal {
+   color: black;
+   background: rgba(4, 4, 4, 0.4);
+   height: 30px;
+   width: 30px;
+   border-radius: 5px;
+}
+

@@ -9,13 +9,26 @@
 </head>
 
 <body>
-    <form id="agregar-nota">
-        <h1>Agregar nota</h1>
-        <input type="text" id="titulo" name="titulo" placeholder="Escribe titulo" />
-        <textarea cols="50" rows="10" id="descripcion" name="descripcion" placeholder="Que debes hacer... "></textarea>
-        <button id="btn-agregar-nota"> Guardar nota </button>
-    </form>
+    <div class="modal">
+        <div class="modal-dialog">
+            <header class="modal-header">
+                <h1>Agregar nota</h1>
+                <button id="btn-cerrar-modal"> X </button>  
+            </header>
+            <section class="modal-content">
+                <form id="agregar-nota">
+                    <input type="text" id="titulo" name="titulo" placeholder="Escribe titulo" />
+                    <textarea cols="50" rows="10" id="descripcion" name="descripcion" placeholder="Que debes hacer... "></textarea>
+                </form>
+            </section>
+            <footer class="modal-footer">
+                <button id="btn-agregar-nota" class="btn-estilo"> Guardar nota </button>
+            </footer>
+        </div>
+    </div>
 
+    <button id="btn-nota">Agregar nueva nota</button>
+    
     <section id="lista-notas"></section>
 
     <section id="decorado"></section>
