@@ -1,6 +1,7 @@
 const formulario = document.querySelector("#agregar-nota");
 const btnAgregarNota = document.querySelector("#btn-agregar-nota");
 const contenedorNotas = document.querySelector("#lista-notas");
+const decorado = document.querySelector("#decorado");
 
 function actualizarListaNotas() {
     let resultado = "";
@@ -29,3 +30,5 @@ function btnClick(e) {
 btnAgregarNota.addEventListener("click", btnClick);
 actualizarListaNotas();
 
+const miDecorado = new Decorado(7);
+decorado.innerHTML = miDecorado.obtenerHTML();
