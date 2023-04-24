@@ -1,0 +1,121 @@
+html {
+    width: 100vw;
+    height: 100vh;
+    margin: 0;  
+    padding: 0;
+}
+
+body {
+    display: flex;
+    flex-flow: column nowrap;
+    align-items: center;
+
+    width: 100vw;
+    min-height: 100vh;
+    margin: 0;  
+    padding: 0;
+
+    background: url("img/lamoto.jpg") no-repeat fixed #222;
+    background-size: cover;
+    color: #ddd;
+}
+
+#agregar-nota {
+    display: flex;
+    flex-flow: column nowrap;
+    align-items: center;
+
+    margin: 2rem;
+    padding: 2rem;
+    border-radius: 5px;
+
+    background: rgba(0, 0, 0, 0.7);
+    backdrop-filter: blur(15px);
+}
+
+#agregar-nota * {
+    margin: 5px;
+}
+
+#agregar-nota ::placeholder {
+    color: rgba(255, 255, 255, 0.4);
+}
+
+#agregar-nota :focus::placeholder {
+    color: rgba(0, 0, 0, 0.4);
+}
+
+#agregar-nota input, #agregar-nota textarea {
+    color: white;
+    background: rgba(255, 255, 255, 0.4);
+}
+
+#agregar-nota input:focus, #agregar-nota textarea:focus {
+    color: black;
+    background: white;
+}
+
+#lista-notas {
+
+    width: 40vw;
+    margin: 0;
+    padding: 15px;
+    border-radius: 5px;
+
+    background: rgba(0, 0, 0, 0.7);
+    backdrop-filter: blur(15px);
+}
+
+.nota {
+    display: flex;
+    align-items: baseline;
+}
+
+.nota input:checked~* {
+    text-decoration: line-through;
+}
+
+.nota input:checked~h1,
+.nota input:checked~p {
+    opacity: 0.7;
+}
+
+.nota input:checked~.action {
+    text-decoration: none;
+}
+
+.nota * {
+    margin: 5px;
+}
+
+.nota p,
+.nota h1 {
+    display: inline;
+}
+
+.nota h1 {
+    text-decoration: underline;
+}
+
+.nota p {
+    flex-grow: 1;
+}
+
+#decorado {
+    display: flex;
+    flex-flow: row nowrap;
+    align-items: stretch;
+    justify-content: stretch;
+    width: 85vw;
+    height: 75px;
+    background-color: #ddd;
+}
+
+.segmento {
+    flex: 1;
+    transition: flex 1s;
+}
+
+.segmento:hover {
+    flex: 10;
+}
