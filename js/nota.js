@@ -4,19 +4,17 @@ class Nota {
         this.descripcion = descripcion;
     }
 
-    get descripcionDePrueba() {
-        return `Titulo: ${this.titulo}
-Descripción: ${this.descripcion}`;
-    }
-
-    obtenerHTML() {
+    obtenerHTML(n) {
         return `
-        <article class="nota">
+        <article class="nota" data-n="${n}">
             <input type="checkbox" />
             <h1>${this.titulo}</h1>
-            <p> ${this.descripcion} </p>
+            <p>${this.descripcion}</p>
+            <i id="editar-nota" class="action fa-solid fa-pencil"></i>
+            <i id="eliminar-nota" class="action fa-solid fa-trash-can"></i>
         </article>
         `;
     }
 
 }
+
