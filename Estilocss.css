@@ -101,6 +101,26 @@ body {
     flex-grow: 1;
 }
 
+.nota .action {
+    opacity: 0.1;
+}
+
+.nota:hover .action {
+    opacity: 0.3;
+}
+
+.nota .action:hover {
+    opacity: 1;
+    transform: scale(1.2);
+    filter: drop-shadow(rgba(255, 255, 255, 0.4) 0 0 3px);
+}
+
+.nota .action:active {
+    opacity: 0.6;
+    transform: scale(1);
+    filter: drop-shadow(white 0 0 2px);
+}
+
 #decorado {
     display: flex;
     flex-flow: row nowrap;

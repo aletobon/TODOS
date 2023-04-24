@@ -28,3 +28,9 @@ function guardarNota(nota) {
     guardarListaNotas(notas);
     console.log(notas);
 }
+
+function eliminarNota(n) {
+    notas.splice(n, 1);
+    guardarListaNotas(notas);
+    console.log(notas);
+}
