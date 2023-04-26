@@ -4,13 +4,24 @@ const msgNotaEliminada =  `Nota eliminada`;
 const msgConfirmarEditar = `¿deseas editar la nota?
 Una vez editado no se podra recuperar la información anterior`;
 
-const formulario = document.querySelector("#agregar-nota");
 const btnAgregarNota = document.querySelector("#btn-agregar-nota");
 const contenedorNotas = document.querySelector("#lista-notas");
 const decorado = document.querySelector("#decorado");
 const btnNota = document.querySelector("#btn-nota");
-const modal = document.querySelector(".modal");
-const btnCerrarModal = document.querySelector("#btn-cerrar-modal")
+const btnCerrarModal = document.querySelector("#btn-cerrar-modal");
+
+const formulario = new Formulario({
+    guardarNota: (nota, notaOriginal) => {
+        const i = notas.indexOf(notaOriginal);
+        if(i == -1){
+            guardarNota(nota);
+        } else {
+            notas[i] = nota;
+        }
+        actualizarListaNotas();
+    }
+});
+formulario.atar(document.body);
 
 function actualizarListaNotas() {
     let resultado = "";
@@ -32,17 +43,16 @@ function actualizarListaNotas() {
     }
 }
 
-function limpiarFormulario() {
-    formulario.titulo.value = "";
-    formulario.descripcion.value = "";
-}
+//#region Eventos
 
 function btnEditarClick(e) {
     e.preventDefault();
     const btnEditar = e.target;
     const notaHTML = btnEditar.parentElement;
     const n = parseInt(notaHTML.dataset.n);
-
+    const nota = notas[n];
+    formulario.establecerNota(nota);
+    formulario.mostrar(true);
 }
 
 function btnEliminarClick(e) {
@@ -63,42 +73,18 @@ function btnEliminarClick(e) {
     console.log("btnEliminarClick", e, n, notaHTML, btnEliminar, confirmacion);
 }
 
-function mostrarModal(mostrar) {
-    if(mostrar) {
-        modal.classList.add("open");
-    } else {
-        modal.classList.remove("open");
-    }
-}
-
 function btnNotaClick(e) {
     e.preventDefault(e);
-    limpiarFormulario();
-    mostrarModal(true); 
+    formulario.establecerNota(null);
+    formulario.mostrar(true);
 }
 
-function btnCerrarModalClick(e) {
-    e.preventDefault(e);
-    mostrarModal(false);
-}
+//#endregion
 
-function btnClick(e) {
-    e.preventDefault();
-    const titulo = formulario.titulo.value;
-    const descripcion = formulario.descripcion.value;
-    const nota = new Nota(titulo, descripcion);
-    guardarNota(nota);
-    limpiarFormulario();
-    actualizarListaNotas();
-    mostrarModal(false);
-}
-
-btnAgregarNota.addEventListener("click", btnClick);
 btnNota.addEventListener("click", btnNotaClick);
-btnCerrarModal.addEventListener("click", btnCerrarModalClick)
 actualizarListaNotas();
 
-const miDecorado = new Decorado(7);
+const miDecorado = new Decorado(10);
 decorado.innerHTML = miDecorado.obtenerHTML();
 
 function generarNotas(n = 10) {
@@ -112,5 +98,3 @@ function generarNotas(n = 10) {
     guardarListaNotas(notas);
     actualizarListaNotas();
 }
-
-
